@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 7/5/2016.
+ * Created by Guanyu on 7/5/2016.
  */
 CORE.Chat = Base.extend(
     {
@@ -7,7 +7,7 @@ CORE.Chat = Base.extend(
             var that = this;
             this.param = param;
             var spec = {
-                cls: 'mortgageTable clear',
+                cls: 'chat',
                 cn: [
                     {
                         tag: 'ul',
@@ -15,7 +15,7 @@ CORE.Chat = Base.extend(
                     },
                     {
                         tag: 'form',
-                        action: "",
+                        id: '_form',
                         cn: [
                             {
                                 tag: "input",
@@ -32,7 +32,10 @@ CORE.Chat = Base.extend(
             };
 
             var dom = CORE.Dom.create(spec);
+            var form = dom.querySelector('#_form');
+
             var socket = io();
+            form.setAttribute('action', '');
 
             $('form').submit(function(){
                 socket.emit('chat message', $('#m').val());
