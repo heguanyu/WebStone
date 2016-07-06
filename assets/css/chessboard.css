@@ -1,0 +1,17 @@
+.chessBoard .background {
+    background-image: url("/assets/images/large/Uldaman_Board.png");
+    background-size: 100% 100%;
+    width: 960px;
+    height: 540px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.chessBoard .chatContainer {
+    width: 960px;
+    height: 340px;
+    position: absolute;
+    left: 0;
+    top: 540px;
+}
