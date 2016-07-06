@@ -37,7 +37,7 @@ CORE.Chat = Base.extend(
             var socket = io();
             form.setAttribute('action', '');
 
-            $('form').submit(function(){
+            $(form).submit(function(){
                 socket.emit('chat message', $('#m').val());
                 $('#m').val('');
                 return false;
