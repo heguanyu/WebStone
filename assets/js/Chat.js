@@ -34,6 +34,7 @@ CORE.Chat = Base.extend(
             var dom = CORE.Dom.create(spec);
             var form = dom.querySelector('#_form');
 
+            var imJustTestChages;
             var socket = io();
             form.setAttribute('action', '');
 
