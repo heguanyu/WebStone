@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>
-        Calculate Mortgage
+        Chat
     </title>
 </head>
 <script src="./lib/jQuery.js" type="application/javascript"></script>
@@ -12,14 +12,15 @@
 <script src="./lib/Dom.js" type="application/javascript"></script>
 <script src="./lib/underscore-min.js" type="application/javascript"></script>
 <link rel="stylesheet" href="./lib/CORE.css" type="text/css"/>
-<script src="./sample/assets/js/MortgageCalculation.js" type="application/javascript"></script>
+<script src="./assets/js/Chat.js" type="application/javascript"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 
 <script type="application/javascript">
-    CORE.loadModule('sample', 'MortgageCalculation');
+    CORE.loadModule('', 'Chat');
     var loadPage= function() {
 
         var contents = CORE.Dom.create({});
-        new CORE.MortgageCalculation(
+        new CORE.Chat(
             {
                 container: contents
             }
