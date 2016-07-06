@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', Verdana, Arial;
+    font-weight: 400;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.clear:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
