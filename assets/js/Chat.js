@@ -11,7 +11,7 @@ CORE.Chat = Base.extend(
                 cn: [
                     {
                         tag: 'ul',
-                        id: 'messages'
+                        id: '_messages'
                     },
                     {
                         tag: 'form',
@@ -19,7 +19,7 @@ CORE.Chat = Base.extend(
                         cn: [
                             {
                                 tag: "input",
-                                id: 'm',
+                                id: '_input',
                                 autocomplete: 'off',
                             },
                             {
@@ -33,17 +33,21 @@ CORE.Chat = Base.extend(
 
             var dom = CORE.Dom.create(spec);
             var form = dom.querySelector('#_form');
+            var messages = dom.querySelector('#_messages');
+            var input = dom.querySelector('#_input');
 
             var socket = io();
             form.setAttribute('action', '');
 
             $(form).submit(function(){
-                socket.emit('chat message', $('#m').val());
-                $('#m').val('');
+                if (input.value.trim() != "") {
+                    socket.emit('sendMessage', input.value);
+                    input.value = "";
+                }
                 return false;
             });
-            socket.on('chat message', function(msg){
-                $('#messages').append($('<li>').text(msg));
+            socket.on('broadcastMessage', function(msg){
+                $(messages).append($('<li>').text(msg));
             });
 
             param.container.appendChild(dom);
