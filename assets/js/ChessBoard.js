@@ -10,8 +10,14 @@ CORE.ChessBoard = Base.extend(
                 cls: 'chessBoard',
                 cn: [
                     {
-                        cls: 'background',
-                        id: '_background'
+                        cls: 'playGround',
+                        cn: [
+
+                            {
+                                cls: 'handCardsContainer',
+                                id: '_handCardsContainer'
+                            }
+                        ]
                     },
                     {
                         cls: 'chatContainer',
@@ -23,6 +29,7 @@ CORE.ChessBoard = Base.extend(
             var dom = CORE.Dom.create(spec);
 
             var chatContainer = dom.querySelector('#_chatContainer');
+            var handCardsContainer = dom.querySelector('#_handCardsContainer');
 
             var chat = new CORE.Chat(
                 {
@@ -30,11 +37,25 @@ CORE.ChessBoard = Base.extend(
                 }
             );
 
+            this.handCards = new CORE.HandCards(
+                {
+                    container: handCardsContainer
+                }
+            );
+
+            this.init();
+
             param.container.appendChild(dom);
+        },
+
+        init: function() {
+            this.handCards.addCard(0);
+            this.handCards.addCard(0);
+            this.handCards.addCard(1);
         }
     },
     {
         hasCss: true,
-        dependancies: ['Chat']
+        dependancies: ['Chat', 'HandCards']
     }
 );

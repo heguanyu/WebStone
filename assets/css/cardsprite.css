@@ -1,0 +1,8 @@
+.cardSprite {
+    position: absolute;
+    transform: scale(0.2);
+    -moz-transform-origin: 0 0;
+}
+
+.cardSprite #_cardContainer {
+}

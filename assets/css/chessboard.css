@@ -1,4 +1,4 @@
-.chessBoard .background {
+.chessBoard .playGround {
     background-image: url("/assets/images/large/Uldaman_Board.png");
     background-size: 100% 100%;
     width: 960px;
@@ -15,3 +15,14 @@
     left: 0;
     top: 540px;
 }
+
+
+.chessBoard .handCardsContainer {
+    background-color: white;
+    width: 240px;
+    height: 80px;
+    position: absolute;
+    left: 360px;
+    bottom: 10px;
+}
+

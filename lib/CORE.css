@@ -15,3 +15,10 @@
     clear: both;
     height: 0;
 }
+
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}
