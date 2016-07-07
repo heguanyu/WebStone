@@ -37,13 +37,18 @@ CORE.HandCards = Base.extend(
             this.cardsContainer.innerHTML = "";
             var that = this;
             var l = this.cards.length;
+            var maxRotate = 30;
+            var totalWidth = 80 + (l / 10) * 60;
+
             _.each(
                 this.cards,
                 function(card, idx) {
+                    var iidx = idx / (l+1);
                     var wrap = CORE.Dom.create({
                         cls: 'wrap',
                         style: {
-
+                            left: ((iidx*totalWidth) + 'px'),
+                            transform: ("rotate(" + (2*iidx-1)*maxRotate + "deg)")
                         }
                     });
                     var cardSprite = new CORE.CardSprite(
